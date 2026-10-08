@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #246bfd;
+    --azul-escuro: #1749a8;
+    --roxo: #7048e8;
+    --amarelo: #ffc928;
+    --verde: #20c997;
+    --vermelho: #ff5c5c;
+    --branco: #ffffff;
+    --cinza: #687386;
+    --fundo: #eef4ff;
+    --texto: #202b3c;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Baloo 2', cursive;
+    color: var(--texto);
+
+    background:
+        radial-gradient(circle at 10% 20%, #dce8ff 0 100px, transparent 101px),
+        radial-gradient(circle at 90% 80%, #e5ddff 0 130px, transparent 131px),
+        linear-gradient(135deg, #f5f8ff, #eaf1ff);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+.topo {
+    width: 100%;
+    padding: 18px 6%;
+    background: var(--branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 15px rgba(35, 68, 120, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8efff;
+    border-radius: 14px;
+    font-size: 25px;
+}
+
+.logo h1 {
+    color: var(--azul);
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.topo p {
+    color: var(--cinza);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 20px;
+    flex: 1;
+}
+
+.tela {
+    display: none;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+    background: var(--branco);
+    border-radius: 28px;
+    padding: 40px;
+
+    box-shadow:
+        0 20px 45px rgba(49, 78, 130, 0.12);
+
+    text-align: center;
+}
+
+
+/* ================================
+   TELA INICIAL
+================================ */
+
+.inicio-card {
+    max-width: 720px;
+    margin: 30px auto;
+}
+
+.personagem {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    background: #e8efff;
+    border-radius: 50%;
+
+    animation: flutuar 2.5s infinite ease-in-out;
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.inicio-card h2 {
+    font-size: 38px;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+.descricao {
+    max-width: 600px;
+    margin: 0 auto 28px;
+
+    color: var(--cinza);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.regras {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.regras div {
+    min-width: 145px;
+    padding: 13px 18px;
+
+    background: #f1f5ff;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: var(--azul-escuro);
+}
+
+.regras span {
+    font-size: 20px;
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.btn {
+    border: none;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 18px;
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-principal {
+    min-width: 230px;
+    padding: 15px 30px;
+
+    color: var(--branco);
+
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--roxo)
+    );
+
+    box-shadow: 0 8px 18px rgba(36, 107, 253, 0.3);
+}
+
+.btn-principal:hover {
+    box-shadow: 0 12px 25px rgba(36, 107, 253, 0.4);
+}
+
+
+/* ================================
+   INFORMAÇÕES DO JOGO
+================================ */
+
+.informacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.info-box {
+    background: var(--branco);
+    border-radius: 18px;
+    padding: 12px 15px;
+
+    box-shadow: 0 7px 20px rgba(49, 78, 130, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-box span {
+    color: var(--cinza);
+    font-size: 15px;
+}
+
+.info-box strong {
+    color: var(--azul-escuro);
+    font-size: 22px;
+}
+
+
+/* ================================
+   BARRA DE PROGRESSO
+================================ */
+
+.progresso {
+    height: 10px;
+
+    margin-bottom: 20px;
+
+    background: #dce5f7;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+#barra-progresso {
+    height: 100%;
+    width: 10%;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--roxo)
+    );
+
+    border-radius: 10px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* ================================
+   PERGUNTA
+================================ */
+
+.pergunta-card {
+    padding: 35px;
+}
+
+.categoria {
+    display: inline-block;
+
+    padding: 6px 16px;
+    margin-bottom: 15px;
+
+    border-radius: 30px;
+
+    color: var(--azul);
+    background: #e8efff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.pergunta-card h2 {
+    max-width: 700px;
+
+    margin: 0 auto 28px;
+
+    font-size: 29px;
+    line-height: 1.3;
+}
+
+
+/* ================================
+   ALTERNATIVAS
+================================ */
+
+.alternativas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    max-width: 700px;
+    margin: auto;
+}
+
+.alternativa {
+    padding: 18px;
+
+    border: 3px solid #e2e9f5;
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    color: var(--texto);
+
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        border 0.2s,
+        background 0.2s;
+}
+
+.alternativa:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--azul);
+    background: #f3f7ff;
+}
+
+.alternativa.correta {
+    color: #087f5b;
+    background: #d3f9e9;
+    border-color: var(--verde);
+}
+
+.alternativa.errada {
+    color: #c92a2a;
+    background: #ffe0e0;
+    border-color: var(--vermelho);
+}
+
+.alternativa:disabled {
+    cursor: default;
+}
+
+
+/* ================================
+   FEEDBACK
+================================ */
+
+.feedback {
+    min-height: 40px;
+
+    margin: 18px 0 5px;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.feedback.certo {
+    color: #099268;
+}
+
+.feedback.errado {
+    color: #e03131;
+}
+
+
+/* ================================
+   BOTÃO PRÓXIMA
+================================ */
+
+.btn-proxima {
+    display: none;
+
+    margin: 15px auto 0;
+    padding: 12px 25px;
+
+    color: var(--branco);
+    background: var(--azul);
+}
+
+.btn-proxima:hover {
+    background: var(--azul-escuro);
+}
+
+
+/* ================================
+   RESULTADO
+================================ */
+
+.resultado-card {
+    max-width: 650px;
+    margin: 30px auto;
+}
+
+.resultado-icone {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.resultado-card h2 {
+    color: var(--azul-escuro);
+    font-size: 36px;
+}
+
+.resultado-card p {
+    color: var(--cinza);
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.resultado-pontos {
+    padding: 20px;
+
+    background: #f1f5ff;
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+}
+
+.resultado-pontos span {
+    display: block;
+
+    color: var(--cinza);
+    font-size: 16px;
+}
+
+.resultado-pontos strong {
+    display: block;
+
+    color: var(--azul);
+    font-size: 50px;
+    line-height: 1;
+    margin: 5px;
+}
+
+.resultado-pontos small {
+    color: var(--cinza);
+}
+
+.estatisticas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.estatisticas div {
+    padding: 15px;
+
+    border-radius: 17px;
+    background: #f7f9fc;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.estatisticas span {
+    font-size: 25px;
+}
+
+.estatisticas strong {
+    font-size: 25px;
+    color: var(--azul-escuro);
+}
+
+.estatisticas small {
+    color: var(--cinza);
+}
+
+
+/* ================================
+   RODAPÉ
+================================ */
+
+footer {
+    padding: 20px;
+
+    text-align: center;
+
+    color: var(--cinza);
+    background: var(--branco);
+
+    font-size: 14px;
+}
+
+footer p:first-child {
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+
+/* ================================
+   ACESSIBILIDADE
+================================ */
+
+button:focus-visible {
+    outline: 4px solid #ffcf33;
+    outline-offset: 3px;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 650px) {
+
+    .topo {
+        padding: 14px 20px;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    .topo p {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    .card {
+        padding: 25px 18px;
+        border-radius: 22px;
+    }
+
+    .inicio-card {
+        margin: 10px auto;
+    }
+
+    .inicio-card h2 {
+        font-size: 30px;
+    }
+
+    .descricao {
+        font-size: 16px;
+    }
+
+    .regras {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .regras div {
+        width: 100%;
+    }
+
+    .informacoes {
+        gap: 8px;
+    }
+
+    .info-box {
+        padding: 9px 5px;
+    }
+
+    .info-box span {
+        font-size: 12px;
+    }
+
+    .info-box strong {
+        font-size: 17px;
+    }
+
+    .pergunta-card h2 {
+        font-size: 23px;
+    }
+
+    .alternativas {
+        grid-template-columns: 1fr;
+    }
+
+    .alternativa {
+        padding: 15px;
+        font-size: 17px;
+    }
+
+    .resultado-card h2 {
+        font-size: 30px;
+    }
+
+    .resultado-icone {
+        font-size: 55px;
+    }
+
+    .btn-principal {
+        width: 100%;
+    }
+}
