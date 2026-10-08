@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="STEIN - Jogo educativo de Matemática para alunos do 6º ano">
+
+    <meta name="description"
+        content="STEIN - Jogo educativo de Matemática para alunos do 6º ano">
+
     <title>STEIN | Desafio Matemático</title>
 
     <link rel="stylesheet" href="style.css">
@@ -13,93 +17,189 @@
 <body>
 
     <header class="topo">
+
         <div class="logo">
             <span class="logo-icon">🧠</span>
-            <h1>STEIN</h1>
+
+            <div>
+                <h1>STEIN</h1>
+                <span class="subtitulo-logo">DESAFIO MATEMÁTICO</span>
+            </div>
         </div>
-        <p>Desafio Matemático</p>
+
+        <div class="badge-ano">
+            6º ANO
+        </div>
+
     </header>
+
 
     <main>
 
-        <!-- Tela inicial -->
+        <!-- =====================================
+             TELA INICIAL
+        ====================================== -->
+
         <section id="tela-inicial" class="tela ativa">
-            <div class="card inicio-card">
-                <div class="personagem">🚀</div>
 
-                <h2>Bem-vindo ao STEIN!</h2>
+            <div class="hero">
 
-                <p class="descricao">
-                    Prepare sua mente para uma aventura matemática!
-                    Responda às perguntas, conquiste pontos e mostre
-                    que você domina os desafios do 6º ano.
-                </p>
-
-                <div class="regras">
-                    <div>
-                        <span>❤️</span>
-                        <strong>3 vidas</strong>
-                    </div>
-
-                    <div>
-                        <span>⭐</span>
-                        <strong>10 desafios</strong>
-                    </div>
-
-                    <div>
-                        <span>🏆</span>
-                        <strong>Até 1000 pontos</strong>
-                    </div>
+                <div class="hero-personagem">
+                    🧠
                 </div>
 
-                <button id="btn-iniciar" class="btn btn-principal">
+                <span class="etiqueta">
+                    🎮 JOGO EDUCATIVO
+                </span>
+
+                <h2>
+                    Bem-vindo ao <span>STEIN!</span>
+                </h2>
+
+                <p>
+                    Escolha seu desafio, teste seus conhecimentos
+                    e mostre quem manda na matemática!
+                </p>
+
+                <button id="btn-comecar" class="btn btn-principal">
                     🚀 COMEÇAR
                 </button>
+
             </div>
+
         </section>
 
 
-        <!-- Tela do jogo -->
+        <!-- =====================================
+             MENU DE SETORES
+        ====================================== -->
+
+        <section id="tela-setores" class="tela">
+
+            <div class="cabecalho-secao">
+
+                <button id="btn-voltar-inicio" class="btn-voltar">
+                    ← Início
+                </button>
+
+                <div>
+                    <span class="mini-label">ESCOLHA SEU DESAFIO</span>
+
+                    <h2>
+                        Qual setor você encara?
+                    </h2>
+
+                    <p>
+                        Cada setor possui 15 perguntas.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="grid-setores" class="grid-setores">
+
+                <!-- Criado pelo JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TELA DO JOGO
+        ====================================== -->
+
         <section id="tela-jogo" class="tela">
 
+            <div class="topo-jogo">
+
+                <button id="btn-voltar-setores" class="btn-voltar">
+                    ← Setores
+                </button>
+
+                <div class="nome-setor-atual">
+                    <span id="icone-setor-atual">➕</span>
+                    <strong id="nome-setor-atual">
+                        Adição
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- Informações -->
+
             <div class="informacoes">
+
                 <div class="info-box">
-                    <span>⭐ Pontos</span>
+                    <span>⭐ PONTOS</span>
                     <strong id="pontuacao">0</strong>
                 </div>
 
                 <div class="info-box">
-                    <span>❤️ Vidas</span>
+                    <span>❤️ VIDAS</span>
                     <strong id="vidas">❤️❤️❤️</strong>
                 </div>
 
                 <div class="info-box">
-                    <span>📚 Questão</span>
+                    <span>📚 QUESTÃO</span>
                     <strong>
-                        <span id="questao-atual">1</span>/10
+                        <span id="questao-atual">1</span>/15
                     </strong>
                 </div>
+
             </div>
+
+
+            <!-- Barra de progresso -->
 
             <div class="progresso">
+
                 <div id="barra-progresso"></div>
+
             </div>
 
+
+            <!-- Pergunta -->
+
             <div class="card pergunta-card">
+
+                <!-- Símbolos flutuantes -->
+
+                <div class="simbolos-flutuantes" aria-hidden="true">
+
+                    <span>+</span>
+                    <span>−</span>
+                    <span>×</span>
+                    <span>÷</span>
+                    <span>=</span>
+                    <span>√</span>
+                    <span>%</span>
+                    <span>π</span>
+
+                </div>
+
 
                 <div class="categoria" id="categoria">
                     Matemática
                 </div>
 
+
                 <h2 id="pergunta">
                     Pergunta aparecerá aqui
                 </h2>
 
+
                 <div id="alternativas" class="alternativas">
-                    <!-- As alternativas serão criadas pelo JavaScript -->
+
+                    <!-- Criadas pelo JavaScript -->
+
                 </div>
 
+
                 <div id="feedback" class="feedback"></div>
+
 
                 <button id="btn-proxima" class="btn btn-proxima">
                     PRÓXIMA ➜
@@ -110,7 +210,10 @@
         </section>
 
 
-        <!-- Tela final -->
+        <!-- =====================================
+             TELA FINAL
+        ====================================== -->
+
         <section id="tela-final" class="tela">
 
             <div class="card resultado-card">
@@ -119,37 +222,64 @@
                     🏆
                 </div>
 
+                <span class="mini-label">
+                    DESAFIO CONCLUÍDO
+                </span>
+
                 <h2 id="titulo-resultado">
-                    Parabéns!
+                    Mandou bem!
                 </h2>
 
                 <p id="mensagem-resultado">
                     Você terminou o desafio!
                 </p>
 
+
                 <div class="resultado-pontos">
-                    <span>Sua pontuação</span>
-                    <strong id="pontuacao-final">0</strong>
-                    <small>pontos</small>
+
+                    <span>PONTUAÇÃO</span>
+
+                    <strong id="pontuacao-final">
+                        0
+                    </strong>
+
+                    <small>
+                        pontos
+                    </small>
+
                 </div>
 
+
                 <div class="estatisticas">
-                    <div>
+
+                    <div class="estatistica-acerto">
                         <span>✅</span>
                         <strong id="acertos-final">0</strong>
                         <small>Acertos</small>
                     </div>
 
-                    <div>
+                    <div class="estatistica-erro">
                         <span>❌</span>
                         <strong id="erros-final">0</strong>
                         <small>Erros</small>
                     </div>
+
                 </div>
 
-                <button id="btn-reiniciar" class="btn btn-principal">
-                    🔄 JOGAR NOVAMENTE
-                </button>
+
+                <div class="botoes-final">
+
+                    <button id="btn-jogar-novamente"
+                        class="btn btn-principal">
+                        🔄 JOGAR NOVAMENTE
+                    </button>
+
+                    <button id="btn-escolher-setor"
+                        class="btn btn-secundario">
+                        📚 OUTRO SETOR
+                    </button>
+
+                </div>
 
             </div>
 
@@ -159,9 +289,17 @@
 
 
     <footer>
-        <p>🎓 STEIN — Aprender também pode ser divertido!</p>
-        <p>Projeto educativo • Matemática • 6º ano</p>
+
+        <p>
+            🧠 STEIN — Aprender também pode ser divertido!
+        </p>
+
+        <p>
+            Projeto educativo • Matemática • 6º ano
+        </p>
+
     </footer>
 
 </body>
+
 </html>
